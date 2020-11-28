@@ -2,8 +2,7 @@ FROM openjdk:slim
 
 ARG MINECRAFT_VERSION=1.16.4
 
-ENV MIN_RAM=1G
-ENV MAX_RAM=2G
+ENV JAR_ARGS = "-Xmx2G -Xms1G"
 
 LABEL maintainer="Kamarad Coal <alex@renoki.org>"
 

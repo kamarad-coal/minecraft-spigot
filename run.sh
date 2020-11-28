@@ -2,4 +2,4 @@
 
 cd /minecraft
 
-java -Xmx${MAX_RAM} -Xms${MIN_RAM} -jar spigot.jar nogui
+java ${JAR_ARGS} -jar spigot.jar nogui
