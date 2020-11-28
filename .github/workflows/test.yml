@@ -32,7 +32,7 @@ jobs:
         id: uuid
         uses: filipstefansson/uuid-action@v1
         with:
-          name: ${{ gihub.sha }}
+          name: ${{ github.sha }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
