@@ -25,6 +25,8 @@ jobs:
           - 1.15.1
           - 1.15
 
+    name: Minecraft ${{ matrix.minecraft }}
+
     steps:
       - uses: actions/checkout@v2
 
