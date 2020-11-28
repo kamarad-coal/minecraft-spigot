@@ -28,12 +28,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set UUID
-        id: uuid
-        uses: filipstefansson/uuid-action@v1
-        with:
-          name: ${{ github.sha }}
-
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 
@@ -51,10 +45,10 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: kamaradcoal/minecraft-spigot:${{ steps.uuid.outputs.uuid }}
+          tags: kamaradcoal/minecraft-spigot:${{ github.sha }}
           build-args: |
             MINECRAFT_VERSION=${{ matrix.minecraft }}
 
       - name: Output container name
         run: |
-          echo "kamaradcoal/minecraft-spigot:${{ steps.uuid.outputs.uuid }}"
+          echo "kamaradcoal/minecraft-spigot:${{ github.sha }}
