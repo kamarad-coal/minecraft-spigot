@@ -39,9 +39,11 @@ RUN addgroup -g 1000 -S kamarad && \
     echo "kamarad ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/kamarad && \
     chown kamarad:kamarad /minecraft
 
-# Download the Minecraft version.
-RUN wget -O spigot.jar https://cdn.getbukkit.org/spigot/spigot-${MINECRAFT_VERSION}.jar && \
-    chmod +x /minecraft/run.sh
+# Build the JAR file for the current version.
+RUN wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar && \
+  java -jar BuildTools.jar --rev $MINECRAFT_VERSION && \
+  mv spigot-*.jar spigot.jar && \
+  chmod +x /minecraft/run.sh
 
 EXPOSE 25565
 
