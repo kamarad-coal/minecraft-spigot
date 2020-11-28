@@ -18,4 +18,4 @@ ADD server.properties /minecraft/server.properties
 
 EXPOSE 25565
 
-ENTRYPOINT ["/minecraft/run.sh"]
+ENTRYPOINT ["run.sh"]
