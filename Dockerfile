@@ -1,4 +1,4 @@
-FROM openjdk:slim
+FROM openjdk:14-slim
 
 ARG MINECRAFT_VERSION=1.16.4
 
