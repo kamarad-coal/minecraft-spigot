@@ -1,4 +1,4 @@
-name: Building Latest Tag
+name: Releasing Latest Tag
 
 on:
   push:
