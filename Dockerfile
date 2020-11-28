@@ -19,4 +19,4 @@ RUN apt update && \
 
 EXPOSE 25565
 
-ENTRYPOINT ["run.sh"]
+ENTRYPOINT ["/minecraft/run.sh"]
