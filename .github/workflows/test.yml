@@ -53,4 +53,4 @@ jobs:
 
       - name: Output container name
         run: |
-          echo "kamaradcoal/minecraft-spigot:mc${{ matrix.minecraft }}-${{ github.sha }}
+          echo "kamaradcoal/minecraft-spigot:mc${{ matrix.minecraft }}-${{ github.sha }}"
