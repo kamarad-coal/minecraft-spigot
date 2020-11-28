@@ -10,7 +10,7 @@ LABEL maintainer="Kamarad Coal <alex@renoki.org>"
 WORKDIR /minecraft
 
 RUN apt update && \
-    apt-y install wget && \
+    apt -y install wget && \
     wget -O spigot.jar https://cdn.getbukkit.org/spigot/spigot-${MINECRAFT_VERSION}.jar
 
 ADD run.sh /minecraft/run.sh
