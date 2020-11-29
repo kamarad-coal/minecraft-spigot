@@ -40,7 +40,8 @@ RUN addgroup -g 1000 -S kamarad && \
 RUN wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar && \
     java -jar BuildTools.jar --rev $MINECRAFT_VERSION && \
     mv spigot-*.jar spigot.jar && \
-    chmod +x /minecraft/run.sh
+    chmod +x /minecraft/run.sh && \
+    rm -rf BuildTools.jar BuildTools.log.txt BuildData/ Bukkit CraftBukkit Spigot apache-maven-3.6.0 work/
 
 EXPOSE 25565
 
