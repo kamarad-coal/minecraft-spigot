@@ -17,9 +17,6 @@ ENV LANG=C.UTF
 ENV UID=1000
 ENV GUID=1000
 
-# The environment variables for the server.
-ENV JAR_ARGS = "-Xmx2G -Xms1G"
-
 LABEL maintainer="Kamarad Coal <alex@renoki.org>"
 
 WORKDIR /minecraft
