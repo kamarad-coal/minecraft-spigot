@@ -4,23 +4,23 @@ Minecraft Spigot Container
 ![Testing](https://github.com/kamarad-coal/minecraft-spigot/workflows/Testing/badge.svg?branch=master)
 ![Docker Pulls](https://img.shields.io/docker/pulls/kamaradcoal/minecraft-spigot)
 
-
 Kamarad Coal is using the Minecraft Spigot container to deploy servers on Kubernetes infrastructure in order to provide easy server spin-ups.
 
 ## Supported Minecraft versions
 
-#### Minecraft 1.16 - 1.x
+Kamarad Coal tests & builds only the latest patch versions for each minor versions. However, you might find images for non-latest-patches, because at some point that version was the latest patch.
 
-- `1.16.1`
-- `1.16.2`
-- `1.16.3`
+The following Minecraft versions are deployed on an day-to-day basis:
+
 - `1.16.4`
-
-#### Minecraft 1.15 - 1.x
-
-- `1.15`,
-- `1.15.1`
 - `1.15.2`
+- `1.14.4`
+- `1.13.2`
+- `1.12.2`
+- `1.11.2`
+- `1.10.2`
+- `1.9.4`
+- `1.8.8`
 
 ## Versioning
 
