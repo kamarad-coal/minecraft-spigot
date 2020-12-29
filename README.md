@@ -20,7 +20,7 @@ The following Minecraft versions are deployed on an day-to-day basis:
 - `1.11.2`
 - `1.10.2`
 - `1.9.4`
-- `1.8.9`
+- `1.8.8`
 
 ## Versioning
 
