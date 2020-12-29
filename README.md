@@ -33,13 +33,13 @@ kamaradcoal/minecraft-spigot:[minecraft_version]-[repo_tag]
 For example, this is going to be the latest tag for Minecraft `1.16.4`:
 
 ```
-kamaradcoal/minecraft-spigot:mc1.16.4-latest
+kamaradcoal/minecraft-spigot:1.16.4-latest
 ```
 
 For version-specific tags, you might use the following image and tag, `1.0.0` being the repo tag:
 
 ```
-kamaradcoal/minecraft-spigot:mc1.16.4-1.0.0
+kamaradcoal/minecraft-spigot:1.16.4-1.0.0
 ```
 
 ## Kubernetes Integration
