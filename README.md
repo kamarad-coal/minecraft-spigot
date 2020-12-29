@@ -27,7 +27,7 @@ The following Minecraft versions are deployed on an day-to-day basis:
 Spigot builds support multiple Minecraft versions for each Github tag. The format for container tags is the following:
 
 ```
-kamaradcoal/minecraft-spigot:mc[minecraft_version]-[repo_tag]
+kamaradcoal/minecraft-spigot:[minecraft_version]-[repo_tag]
 ```
 
 For example, this is going to be the latest tag for Minecraft `1.16.4`:

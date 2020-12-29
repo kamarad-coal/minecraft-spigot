@@ -48,10 +48,10 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: kamaradcoal/minecraft-spigot:mc${{ matrix.minecraft }}-${{ github.sha }}
+          tags: kamaradcoal/minecraft-spigot:${{ matrix.minecraft }}-${{ github.sha }}
           build-args: |
             MINECRAFT_VERSION=${{ matrix.minecraft }}
 
       - name: Output container name
         run: |
-          echo "kamaradcoal/minecraft-spigot:mc${{ matrix.minecraft }}-${{ github.sha }}"
+          echo "kamaradcoal/minecraft-spigot:${{ matrix.minecraft }}-${{ github.sha }}"

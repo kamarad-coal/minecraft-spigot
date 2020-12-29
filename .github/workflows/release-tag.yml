@@ -52,6 +52,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: kamaradcoal/minecraft-spigot:mc${{ matrix.minecraft }}-${{ steps.tag.outputs.tag }}
+          tags: kamaradcoal/minecraft-spigot:${{ matrix.minecraft }}-${{ steps.tag.outputs.tag }}
           build-args: |
             MINECRAFT_VERSION=${{ matrix.minecraft }}
