@@ -1,4 +1,4 @@
-name: Release Latest Tag
+name: Docker
 
 on:
   push:
