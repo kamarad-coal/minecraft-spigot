@@ -29,7 +29,7 @@ jobs:
           - 1.9.4
           - 1.8.8
 
-    name: Minecraft ${{ matrix.minecraft }}
+    name: Tag Release for Minecraft ${{ matrix.minecraft }}
 
     steps:
       - uses: actions/checkout@v2
