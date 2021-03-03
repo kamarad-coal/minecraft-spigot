@@ -19,6 +19,7 @@ jobs:
     strategy:
       matrix:
         minecraft:
+          - 1.16.5
           - 1.16.4
           - 1.15.2
           - 1.14.4
@@ -54,7 +55,3 @@ jobs:
           tags: kamaradcoal/minecraft-spigot:${{ matrix.minecraft }}-${{ github.sha }}
           build-args: |
             MINECRAFT_VERSION=${{ matrix.minecraft }}
-
-      - name: Output container name
-        run: |
-          echo "kamaradcoal/minecraft-spigot:${{ matrix.minecraft }}-${{ github.sha }}"

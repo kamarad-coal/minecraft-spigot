@@ -1,8 +1,8 @@
-FROM alpine:3.12
+FROM alpine:3.13
 
 # Will be replaced at the building step. Used to know
 # which version of Minecraft should be downloaded.
-ARG MINECRAFT_VERSION=1.16.4
+ARG MINECRAFT_VERSION=1.16.5
 
 # Specifying Java envs.
 ENV JAVA_VERSION_MAJOR=8

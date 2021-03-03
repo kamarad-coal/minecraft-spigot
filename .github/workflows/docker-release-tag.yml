@@ -19,6 +19,7 @@ jobs:
     strategy:
       matrix:
         minecraft:
+          - 1.16.5
           - 1.16.4
           - 1.15.2
           - 1.14.4
@@ -33,6 +34,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Docker meta
+        id: docker_meta
+        uses: crazy-max/ghaction-docker-meta@v1
+        with:
+          images: kamaradcoal/minecraft-forge
+          tag-semver: |
+            ${{ matrix.forge }}-{{version}}
+            ${{ matrix.minecraft }}-{{version}}
+            ${{ matrix.minecraft }}-{{major}}
+            ${{ matrix.minecraft }}-{{major}}.{{minor}}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -55,6 +67,8 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: kamaradcoal/minecraft-spigot:${{ matrix.minecraft }}-${{ steps.tag.outputs.tag }}
+          context: .
+          tags: ${{ steps.docker_meta.outputs.tags }}
+          labels: ${{ steps.docker_meta.outputs.labels }}
           build-args: |
             MINECRAFT_VERSION=${{ matrix.minecraft }}

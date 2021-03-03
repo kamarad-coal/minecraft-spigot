@@ -12,6 +12,7 @@ Kamarad Coal tests & builds only the latest patch versions for each minor versio
 
 The following Minecraft versions are deployed on an day-to-day basis:
 
+- `1.16.5`
 - `1.16.4`
 - `1.15.2`
 - `1.14.4`
@@ -30,16 +31,40 @@ Spigot builds support multiple Minecraft versions for each Github tag. The forma
 kamaradcoal/minecraft-spigot:[minecraft_version]-[repo_tag]
 ```
 
-For example, this is going to be the latest tag for Minecraft `1.16.4`:
+For example, this is going to be the latest tag for Minecraft `1.16.5`:
 
 ```
-kamaradcoal/minecraft-spigot:1.16.4-latest
+kamaradcoal/minecraft-spigot:1.16.5-latest
 ```
+
+### Version Specific Tags
 
 For version-specific tags, you might use the following image and tag, `1.0.0` being the repo tag:
 
 ```
-kamaradcoal/minecraft-spigot:1.16.4-1.0.0
+kamaradcoal/minecraft-spigot:1.16.5-1.0.0
+```
+
+### Minecraft Majors and Minor versions
+
+You can also specify major repo versions, where `1.0` means `1.0.x`:
+
+```
+kamaradcoal/minecraft-spigot:1.16.5-1.0
+```
+
+You can also specify major.minor repo versions, where `1` means `1.x` (all 1.x versions):
+
+```
+kamaradcoal/minecraft-spigot:1.16.5-1
+```
+
+### Latest Tags
+
+For latest tags, use `latest` instead any other version:
+
+```
+kamaradcoal/minecraft-spigot:1.16.5-latest
 ```
 
 ## Kubernetes Integration
