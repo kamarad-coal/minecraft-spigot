@@ -1,0 +1,22 @@
+name: Docker
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+
+    name: Update Docker description
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: kamaradcoal/minecraft-forge
