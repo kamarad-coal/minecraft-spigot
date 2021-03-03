@@ -14,9 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Docker Hub Description
-        uses: peter-evans/dockerhub-description@v2
+      - name: Update description on Dockerhub
+        uses: ms-jpq/sync-dockerhub-readme@v1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: kamaradcoal/minecraft-spigot
+          readme: "./README.md"
