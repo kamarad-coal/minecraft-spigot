@@ -32,11 +32,11 @@ jobs:
 
       - name: Docker meta
         id: docker_meta
-        uses: crazy-max/ghaction-docker-meta@v1
+        uses: crazy-max/ghaction-docker-meta@v2.3.0
         with:
           images: kamaradcoal/minecraft-forge
-          tag-semver: |
-            ${{ matrix.minecraft }}-latest
+          tags: |
+            type=semver,pattern=${{ matrix.minecraft }}-latest
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
