@@ -34,9 +34,8 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v2.3.0
         with:
-          images: kamaradcoal/minecraft-forge
+          images: kamaradcoal/minecraft-spigot
           tags: |
-            type=semver,pattern=${{ matrix.forge }}-{{version}}
             type=semver,pattern=${{ matrix.minecraft }}-{{version}}
             type=semver,pattern=${{ matrix.minecraft }}-{{major}}
             type=semver,pattern=${{ matrix.minecraft }}-{{major}}.{{minor}}

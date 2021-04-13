@@ -30,14 +30,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Docker meta
-        id: docker_meta
-        uses: crazy-max/ghaction-docker-meta@v2.3.0
-        with:
-          images: kamaradcoal/minecraft-forge
-          tags: |
-            type=semver,pattern=${{ matrix.minecraft }}-latest
-
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 
@@ -56,7 +48,6 @@ jobs:
         with:
           push: true
           context: .
-          tags: ${{ steps.docker_meta.outputs.tags }}
-          labels: ${{ steps.docker_meta.outputs.labels }}
+          tags: kamaradcoal/minecraft-spigot:${{ matrix.minecraft }}-latest
           build-args: |
             MINECRAFT_VERSION=${{ matrix.minecraft }}
