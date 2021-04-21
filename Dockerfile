@@ -21,7 +21,7 @@ LABEL maintainer="Kamarad Coal <alex@renoki.org>"
 
 WORKDIR /minecraft
 
-ADD /minecraft/run.sh /minecraft/server.properties /minecraft/
+ADD minecraft/run.sh minecraft/server.properties /minecraft/
 
 # Install packages.
 RUN apk upgrade --update && \
