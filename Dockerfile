@@ -25,9 +25,9 @@ ADD /minecraft/run.sh /minecraft/server.properties /minecraft/
 
 # Install packages.
 RUN apk upgrade --update && \
-    apk add --update wget curl ca-certificates openssl bash git screen util-linux sudo shadow nss && \
+    apk add --no-cache --update wget curl ca-certificates openssl bash git screen util-linux sudo shadow nss && \
     update-ca-certificates && \
-    apk add openjdk8-jre && \
+    apk add --no-cache --update openjdk8-jre && \
     # Add "kamarad" user than can access "/minecraft"
     addgroup -g 1000 -S kamarad && \
     adduser -u 1000 -S kamarad -G kamarad -h /minecraft && \
