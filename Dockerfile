@@ -39,7 +39,8 @@ RUN apk upgrade --update && \
     mv spigot-*.jar spigot.jar && \
     chmod +x /minecraft/run.sh && \
     rm -rf BuildTools.jar BuildTools.log.txt BuildData/ Bukkit CraftBukkit Spigot apache-maven-3.6.0 work/ && \
-    rm -rf .git/ .github/ *.md
+    rm -rf .git/ .github/ *.md && \
+    rm -rf /var/cache/apk/*
 
 EXPOSE 25565
 
