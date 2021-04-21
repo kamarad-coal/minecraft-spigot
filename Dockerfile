@@ -21,27 +21,25 @@ LABEL maintainer="Kamarad Coal <alex@renoki.org>"
 
 WORKDIR /minecraft
 
-ADD /minecraft/run.sh /minecraft/run.sh
-ADD /minecraft/server.properties /minecraft/server.properties
+ADD /minecraft/run.sh /minecraft/server.properties /minecraft/
 
 # Install packages.
 RUN apk upgrade --update && \
     apk add --update wget curl ca-certificates openssl bash git screen util-linux sudo shadow nss && \
     update-ca-certificates && \
-    apk add openjdk8-jre
-
-# Add "kamarad" user than can access "/minecraft"
-RUN addgroup -g 1000 -S kamarad && \
+    apk add openjdk8-jre && \
+    # Add "kamarad" user than can access "/minecraft"
+    addgroup -g 1000 -S kamarad && \
     adduser -u 1000 -S kamarad -G kamarad -h /minecraft && \
     echo "kamarad ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/kamarad && \
-    chown kamarad:kamarad /minecraft
-
-# Build the JAR file for the current version.
-RUN wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar && \
+    chown kamarad:kamarad /minecraft && \
+    # Build the JAR file for the current version.
+    wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar && \
     java -jar BuildTools.jar --rev $MINECRAFT_VERSION && \
     mv spigot-*.jar spigot.jar && \
     chmod +x /minecraft/run.sh && \
-    rm -rf BuildTools.jar BuildTools.log.txt BuildData/ Bukkit CraftBukkit Spigot apache-maven-3.6.0 work/
+    rm -rf BuildTools.jar BuildTools.log.txt BuildData/ Bukkit CraftBukkit Spigot apache-maven-3.6.0 work/ && \
+    rm -rf .git/ .github/ *.md
 
 EXPOSE 25565
 
