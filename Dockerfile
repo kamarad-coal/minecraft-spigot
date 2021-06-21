@@ -1,4 +1,4 @@
-FROM alpine:3.13
+FROM alpine:3.14.0
 
 # Will be replaced at the building step. Used to know
 # which version of Minecraft should be downloaded.
