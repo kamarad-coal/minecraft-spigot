@@ -6,6 +6,12 @@ Minecraft Spigot Container
 
 Kamarad Coal is using the Minecraft Spigot container to deploy servers on Kubernetes infrastructure in order to provide easy server spin-ups.
 
+## 🤝 Supporting
+
+If you are using your application in your day-to-day job (in production), on presentation demos, hobby projects, or even school projects, spread some kind words about our work or sponsor our work via KoFi. 📦
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R42U8CL)
+
 ## Supported Minecraft versions
 
 Kamarad Coal tests & builds only the latest patch versions for each minor versions. However, you might find images for non-latest-patches, because at some point that version was the latest patch.
