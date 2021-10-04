@@ -34,7 +34,7 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v2.5.0
         with:
-          images: kamaradcoal/minecraft-spigot
+          images: quay.io/kamaradcoal/minecraft-spigot
           tags: |
             type=semver,pattern=${{ matrix.minecraft }}-{{version}}
             type=semver,pattern=${{ matrix.minecraft }}-{{major}}
@@ -50,11 +50,12 @@ jobs:
         id: tag
         uses: dawidd6/action-get-tag@v1
 
-      - name: Login to DockerHub
+      - name: Login to Quay
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          registry: quay.io
+          username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
+          password: ${{ secrets.DOCKER_REGISTRY_TOKEN }}
 
       - name: Build and push
         id: docker
